@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.Request;
-import com.android.volley.Request.Method;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
@@ -64,7 +63,7 @@ public class RegisterActivity extends Activity {
 
         // Check if user is already logged in or not
         if (session.isLoggedIn()) {
-            // User is already logged in. Take him to main activity
+            // User is already logged in. Take him to main com.ensemble.activity
             Intent intent = new Intent(RegisterActivity.this,
                     MainActivity.class);
             startActivity(intent);
@@ -133,14 +132,14 @@ public class RegisterActivity extends Activity {
                         String name = user.getString("name");
                         String email = user.getString("email");
                         String created_at = user
-                                .getString("created_at");
+                                .getString("createdAt");
 
                         // Inserting row in users table
                         db.addUser(name, email, uid, created_at);
 
                         Toast.makeText(getApplicationContext(), "User successfully registered. Try login now!", Toast.LENGTH_LONG).show();
 
-                        // Launch login activity
+                        // Launch login com.ensemble.activity
                         Intent intent = new Intent(
                                 RegisterActivity.this,
                                 LoginActivity.class);

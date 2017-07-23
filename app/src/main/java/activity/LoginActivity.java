@@ -32,7 +32,7 @@ import helper.SessionManager;
 
 
 public class LoginActivity extends Activity {
-    private static final String TAG = RegisterActivity.class.getSimpleName();
+    private static final String TAG = LoginActivity.class.getSimpleName();
     private Button btnLogin;
     private Button btnLinkToRegister;
     private EditText inputEmail;
@@ -63,7 +63,7 @@ public class LoginActivity extends Activity {
 
         // Check if user is already logged in or not
         if (session.isLoggedIn()) {
-            // User is already logged in. Take him to main activity
+            // User is already logged in. Take him to main com.ensemble.activity
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
@@ -138,12 +138,12 @@ public class LoginActivity extends Activity {
                         String name = user.getString("name");
                         String email = user.getString("email");
                         String created_at = user
-                                .getString("created_at");
+                                .getString("createdAt");
 
                         // Inserting row in users table
                         db.addUser(name, email, uid, created_at);
 
-                        // Launch main activity
+                        // Launch main com.ensemble.activity
                         Intent intent = new Intent(LoginActivity.this,
                                 MainActivity.class);
                         startActivity(intent);

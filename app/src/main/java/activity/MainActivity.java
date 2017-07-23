@@ -74,7 +74,7 @@ public class MainActivity extends Activity {
 
         db.deleteUsers();
 
-        // Launching the login activity
+        // Launching the login com.ensemble.activity
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();
